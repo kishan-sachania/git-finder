@@ -62,7 +62,7 @@ Follow these steps to pull the repository and start the application:
    git clone https://github.com/kishan-sachania/git-finder.git
 
 2. Navigate to the project directory:
-  cd <project-directory>
+  cd git-finder
 
 3. Install dependencies:
   npm install
