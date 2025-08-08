@@ -85,6 +85,7 @@ const UserRepository = ({ searchQuery, searchResponse }) => {
   }, [selected]);
 
   const resetList = () => {
+    setSelected(null);
     setRepoList(userRepositoryList);
   };
 
@@ -290,7 +291,12 @@ const UserRepository = ({ searchQuery, searchResponse }) => {
                 <DropdownMenuLabel>Sort By</DropdownMenuLabel>
                 <DropdownMenuSeparator className="bg-[#30363d]" />
                 <RadioGroup value={selected} onValueChange={setSelected}>
-                  <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
+                  <DropdownMenuItem
+                    className={
+                      selected === "name" ? "bg-[#21262d] text-[#f0f6fc]" : ""
+                    }
+                    onSelect={(e) => e.preventDefault()}
+                  >
                     {" "}
                     {/* Prevent closing on radio select */}
                     <div className="flex items-center space-x-2">
@@ -301,13 +307,20 @@ const UserRepository = ({ searchQuery, searchResponse }) => {
                       />
                       <Label
                         htmlFor="name"
-                        className="hover:bg-[#21262d] w-full py-2 px-1 rounded hover:text-[#f0f6fc] cursor-pointer"
+                        className=" w-full py-2 px-1 rounded cursor-pointer"
                       >
                         Name (Z-A)
                       </Label>
                     </div>
                   </DropdownMenuItem>
-                  <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
+                  <DropdownMenuItem
+                    className={
+                      selected === "star-counter"
+                        ? "bg-[#21262d] text-[#f0f6fc]"
+                        : ""
+                    }
+                    onSelect={(e) => e.preventDefault()}
+                  >
                     {" "}
                     {/* Prevent closing on radio select */}
                     <div className="flex items-center space-x-2">
@@ -318,7 +331,7 @@ const UserRepository = ({ searchQuery, searchResponse }) => {
                       />
                       <Label
                         htmlFor="star-counter"
-                        className="hover:bg-[#21262d] w-full py-2 px-1 rounded hover:text-[#f0f6fc] cursor-pointer"
+                        className=" w-full py-2 px-1 rounded  cursor-pointer"
                       >
                         Star Count
                       </Label>
