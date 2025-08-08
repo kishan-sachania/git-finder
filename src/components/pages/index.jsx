@@ -101,6 +101,9 @@ const UserRepository = ({ searchQuery, searchResponse }) => {
 
   //Filter item on Input
   const handleSearch = (input) => {
+    setRepositoryError(null);
+    if (input.trim() === "") setRepoList(userRepositoryList);
+
     const filteredList = userRepositoryList.filter((item) =>
       item.name.toLowerCase().includes(input.toLowerCase())
     );
@@ -270,66 +273,66 @@ const UserRepository = ({ searchQuery, searchResponse }) => {
         </h3>
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 w-full sm:w-auto">
           <div className="flex gap-2 items-center">
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button
-                variant="outline"
-                className="bg-[#161b22] text-[#7d8590] border-[#30363d] hover:bg-[#21262d] hover:text-[#f0f6fc]"
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="outline"
+                  className="bg-[#161b22] text-[#7d8590] border-[#30363d] hover:bg-[#21262d] hover:text-[#f0f6fc]"
+                >
+                  <Filter size={16} className="mr-2" />
+                  Sort
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent
+                className="bg-[#161b22] text-[#7d8590] border-[#30363d]"
+                align="start"
               >
-                <Filter size={16} className="mr-2" />
-                Sort
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent
-              className="bg-[#161b22] text-[#7d8590] border-[#30363d]"
-              align="start"
+                <DropdownMenuLabel>Sort By</DropdownMenuLabel>
+                <DropdownMenuSeparator className="bg-[#30363d]" />
+                <RadioGroup value={selected} onValueChange={setSelected}>
+                  <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
+                    {" "}
+                    {/* Prevent closing on radio select */}
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem
+                        value="name"
+                        id="name"
+                        className="peer sr-only "
+                      />
+                      <Label
+                        htmlFor="name"
+                        className="hover:bg-[#21262d] w-full py-2 px-1 rounded hover:text-[#f0f6fc] cursor-pointer"
+                      >
+                        Name (Z-A)
+                      </Label>
+                    </div>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
+                    {" "}
+                    {/* Prevent closing on radio select */}
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem
+                        value="star-counter"
+                        id="star-counter"
+                        className="peer sr-only"
+                      />
+                      <Label
+                        htmlFor="star-counter"
+                        className="hover:bg-[#21262d] w-full py-2 px-1 rounded hover:text-[#f0f6fc] cursor-pointer"
+                      >
+                        Star Count
+                      </Label>
+                    </div>
+                  </DropdownMenuItem>
+                </RadioGroup>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            <Button
+              className="bg-[#21262d] text-[#7d8590] border border-[#30363d] hover:bg-[#30363d] hover:text-[#f0f6fc]"
+              onClick={resetList}
             >
-              <DropdownMenuLabel>Sort By</DropdownMenuLabel>
-              <DropdownMenuSeparator className="bg-[#30363d]" />
-              <RadioGroup value={selected} onValueChange={setSelected}>
-                <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
-                  {" "}
-                  {/* Prevent closing on radio select */}
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem
-                      value="name"
-                      id="name"
-                      className="peer sr-only "
-                    />
-                    <Label
-                      htmlFor="name"
-                      className="hover:bg-[#21262d] w-full py-2 px-1 rounded hover:text-[#f0f6fc] cursor-pointer"
-                    >
-                      Name (Z-A)
-                    </Label>
-                  </div>
-                </DropdownMenuItem>
-                <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
-                  {" "}
-                  {/* Prevent closing on radio select */}
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem
-                      value="star-counter"
-                      id="star-counter"
-                      className="peer sr-only"
-                    />
-                    <Label
-                      htmlFor="star-counter"
-                      className="hover:bg-[#21262d] w-full py-2 px-1 rounded hover:text-[#f0f6fc] cursor-pointer"
-                    >
-                      Star Count
-                    </Label>
-                  </div>
-                </DropdownMenuItem>
-              </RadioGroup>
-            </DropdownMenuContent>
-          </DropdownMenu>
-          <Button
-            className="bg-[#21262d] text-[#7d8590] border border-[#30363d] hover:bg-[#30363d] hover:text-[#f0f6fc]"
-            onClick={resetList}
-          >
-            Reset
-          </Button>
+              Reset
+            </Button>
           </div>
           <div className="flex-1 relative w-full sm:max-w-xs lg:max-w-md">
             {" "}
