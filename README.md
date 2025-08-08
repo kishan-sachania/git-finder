@@ -14,7 +14,7 @@ GitHub Finder is a React + Vite-based web application that allows users to searc
 - **Redirect to Repository**: Click on a repository to navigate to its GitHub page.
 - **Search History**: Maintains a history of user searches using Redux Toolkit with persistence.
 - **Clear History**: Option to clear the search history.
-- **Responsive UI**: It Suppourt sm, md, lg and xl Dimensions of Responsiveness 
+- **Responsive UI**: It suppourts sm, md, lg, and xl Dimensions of Responsiveness 
 
 ## Technologies Used
 
@@ -62,7 +62,7 @@ Follow these steps to pull the repository and start the application:
    git clone https://github.com/kishan-sachania/git-finder.git
 
 2. Navigate to the project directory:
-  cd <project-directory>
+  cd git-finder
 
 3. Install dependencies:
   npm install
