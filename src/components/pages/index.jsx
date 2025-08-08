@@ -365,7 +365,7 @@ const UserRepository = ({ searchQuery, searchResponse }) => {
         </div>
       </div>
       {/* List */}
-      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3 pb-20">
+      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3 pb-40 md:pb-20">
         {repoList.length > 0 &&
           repoList.map((repo) => (
             <Card
