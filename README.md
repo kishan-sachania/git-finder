@@ -62,7 +62,7 @@ Follow these steps to pull the repository and start the application:
    git clone https://github.com/kishan-sachania/git-finder.git
 
 2. Navigate to the project directory:
-  cd git-finder
+  cd <project-directory>
 
 3. Install dependencies:
   npm install
@@ -89,8 +89,3 @@ Follow these steps to pull the repository and start the application:
 
 # Scripts
 - `npm run dev` - Start development server.
-- `npm run build` - Build for production.
-- `npm run preview` - Preview production build.
-
-# License
-- Licensed under MIT License. See LICENSE file for details.
