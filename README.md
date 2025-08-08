@@ -2,6 +2,9 @@
 
 GitHub Finder is a React + Vite-based web application that allows users to search for GitHub users and their repositories. It provides features like sorting repositories, searching repositories by name, and redirecting to the repository page. The application also maintains a history of user searches using Redux Toolkit with persistence.
 
+#Live demo
+https://git-finder-wine-kappa.vercel.app/
+
 ## Features
 
 - **Search GitHub Users**: Find GitHub users by their username.
